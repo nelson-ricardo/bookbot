@@ -1,3 +1,3 @@
-# Bookbot
+# bookbot
 
-This is a project found in the curriculum of boot.dev
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
