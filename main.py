@@ -7,13 +7,25 @@ def get_book_text(filepath):
     return ret_string
 
 def main():
-    frankenstein_text = get_book_text("./books/frankenstein.txt")
-    word_count = word_counter(frankenstein_text)
-    print(f"{word_count} words found in the document")
+    filepath = "books/frankenstein.txt"
+
+    frankenstein_text = get_book_text(filepath)
     char_count = char_counter(frankenstein_text)
-    # for key in char_count:
-    #     print(f"'{key}': {char_count[key]}")
+    
+    # list of dictionarys {char: num_of_times}
     list_dict = sort_dictionary(char_count)
-    print(list_dict)
+    
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {filepath}...")
+    print("----------- Word Count ----------")
+    word_count = word_counter(frankenstein_text)
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    # TODO: debug this!
+    for dictionary in list_dict:
+        key = list(dictionary.keys())[0]
+        if key.isalpha():
+            print(f"{key}: {dictionary[key]}")
+    print("============= END ===============")
 
 main()
